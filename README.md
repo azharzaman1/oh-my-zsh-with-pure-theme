@@ -74,7 +74,15 @@ If you see strange characters in your terminal, add this to `~/.bashrc` before s
 ```
 
 ## Step 4: Install Pure Theme & Fonts
-This is the only solution that works for setting up Pure prompt with Oh my Zsh on windows. By default, Oh My Zsh uses the `robbyrussell` theme. To use Pure, install it manually:
+This is the only solution that works for setting up Pure prompt with Oh my Zsh on windows. By default, Oh My Zsh uses the `robbyrussell` theme. 
+
+Change default theme to nothing. 
+
+```bash
+ZSH_THEME=""
+```
+
+To use Pure, install it manually:
 
 1. Clone the Pure theme:
 
