@@ -1,5 +1,17 @@
-# Setup Oh My Zsh + Pure + Fonts on Windows
+# Oh My Zsh + Pure - Rethink Your Windows Terminal Experience
 
+**Only solution that works for setting up Pure prompt with Oh My Zsh.**
+
+## Preview
+![Preview](https://raw.githubusercontent.com/azharzaman1/oh-my-zsh-with-pure-theme/refs/heads/main/custom.png)
+
+## Prerequisites
+- Git
+- Git Bash
+- Windows Terminal (With Git Bash Profile)
+
+**NOTE:** You can follow any online tutorial for above mentioned requirements. 
+ 
 ## Step 1: Install Zsh
 
 1. Download the latest [MSYS2 Zsh package](https://packages.msys2.org/packages/zsh?repo=msys&variant=x86_64).
@@ -62,8 +74,7 @@ If you see strange characters in your terminal, add this to `~/.bashrc` before s
 ```
 
 ## Step 4: Install Pure Theme & Fonts
-
-By default, Oh My Zsh uses the `robbyrussell` theme. To use Pure, install it manually:
+This is the only solution that works for setting up Pure prompt with Oh my Zsh on windows. By default, Oh My Zsh uses the `robbyrussell` theme. To use Pure, install it manually:
 
 1. Clone the Pure theme:
 
@@ -99,13 +110,13 @@ cd fonts
 
 ## Step 5: Customize Pure Theme & Syntax Highlighting
 
-### Default Pure Theme
+### Default Preview
 
-![Pure Theme](https://raw.githubusercontent.com/hi-dharmatwada/oh-my-zsh-setup/master/images/pure-theme-default.png)
+![Default Preview](https://raw.githubusercontent.com/azharzaman1/oh-my-zsh-with-pure-theme/refs/heads/main/default.png)
 
-### Customized Pure Theme
+### Customized Preview
 
-![Customized Pure Theme](https://raw.githubusercontent.com/hi-dharmatwada/oh-my-zsh-setup/master/images/pure-theme.png)
+![Customized Preview](https://raw.githubusercontent.com/azharzaman1/oh-my-zsh-with-pure-theme/refs/heads/main/custom.png)
 
 To customize syntax highlighting, add this to `~/.zshrc`:
 
@@ -134,3 +145,46 @@ zstyle ':prompt:pure:git:branch' color 242
 zstyle ':prompt:pure:git:dirty' color 242
 zstyle ':prompt:pure:git:arrow' color "#99EBFC"
 ```
+
+Finally, we need to change terminal background. Open Windows Teriminal settings, click on Open JSON file button. Add the following color scheme under schemes property. 
+
+```
+schemes: [
+{
+      "name": "Pure",
+      "background": "#282A36",
+      "black": "#0C0C0C",
+      "blue": "#0037DA",
+      "brightBlack": "#767676",
+      "brightBlue": "#3B78FF",
+      "brightCyan": "#61D6D6",
+      "brightGreen": "#16C60C",
+      "brightPurple": "#B4009E",
+      "brightRed": "#E74856",
+      "brightWhite": "#F2F2F2",
+      "brightYellow": "#F9F1A5",
+      "cursorColor": "#FFFFFF",
+      "cyan": "#3A96DD",
+      "foreground": "#CCCCCC",
+      "green": "#13A10E",
+      "purple": "#881798",
+      "red": "#C50F1F",
+      "selectionBackground": "#FFFFFF",
+      "white": "#CCCCCC",
+      "yellow": "#C19C00"
+    }
+]
+```
+Now select Git Bash profile, and navigate through `Appearance -> Text -> Color Scheme` and select **Pure**.
+
+---
+
+## Contributing
+
+I’m open to contributions! Feel free to submit pull requests (PRs) for improvements, fixes, or alternative approaches. If you have suggestions or better methods, I’d love to hear them. Let’s make this guide even better together! 🚀
+
+## Issues & Feedback
+
+If you encounter any issues or have feedback, please open an issue on GitHub. Your input is highly appreciated!
+
+
