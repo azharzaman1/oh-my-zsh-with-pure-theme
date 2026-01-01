@@ -90,21 +90,35 @@ To use Pure, install it manually:
 git clone https://github.com/sindresorhus/pure.git ~/.zsh/pure
 ```
 
-2. Create symlinks for Pure:
+2. Clone Pure into `~/.zsh/pure` and make Pure scripts accessible via symlinks (if you get File already exists error, move forward).
 
 ```bash
+git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 cd ~/.zsh/pure
-ln -s "$PWD/pure.zsh" "$HOME/.zfunctions/prompt_pure_setup"
-ln -s "$PWD/async.zsh" "$HOME/.zfunctions/async"
+ln -s "$HOME/.zsh/pure/pure.zsh" "$HOME/.zsh/pure/prompt_pure_setup"
+ln -s "$HOME/.zsh/pure/async.zsh" "$HOME/.zsh/pure/async"
 ```
 
-3. Enable Pure by adding this to `~/.zshrc` **after** `source $ZSH/oh-my-zsh.sh`:
+3. Enable Pure by adding this at the end of `~/.zshrc` file.:
 
 ```bash
-fpath=("$HOME/.zfunctions" $fpath)
+fpath=($HOME/.zsh/pure $fpath)
 autoload -U promptinit; promptinit
 prompt pure
 ```
+Restart your terminal and Pure should be loaded without any errors.
+
+If you see `prompt_pure_setup:1: command not found: pure.zsh`, it means Zsh found the file `prompt_pure_setup`, but it can't find `pure.zsh` to execute it, even though they are in the same folder. We need to fix broken symlinks; run these commands in terminal.
+
+```bash
+cd "$HOME/.zsh/pure"
+rm prompt_pure_setup
+rm async
+cp pure.zsh prompt_pure_setup
+cp async.zsh async
+```
+Because you are on Windows, `ln -s` sometimes creates a "plain text file" that looks like a link to Windows but is unreadable by Zsh. We just replace the links with actual copies. Now when you restart the terminal, Pure should load without any errors.
+
 
 ### Install Fonts
 
