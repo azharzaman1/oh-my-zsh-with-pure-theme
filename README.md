@@ -131,6 +131,11 @@ cd fonts
 ```
 
 ## Step 5: Customize Pure Theme & Syntax Highlighting
+Give your terminal the personalized look. This is where your personal preferences come into play. If colors look dull, don't worry this is because of your Windows terminal color scheme.
+
+While on Windows terminal, press `Ctrl + ,` to open settings. In the sidebar under **Profiles** section, select **Defaults** tab. Expand **Appearance** section. You can select different color schemes and see what is best for your self.
+
+My personal preference is `Dark+` and it also goes well with custom syntax colors i have provided below.
 
 ### Default Preview
 
@@ -166,39 +171,10 @@ zstyle ':prompt:pure:prompt:*' color "#59F28C"
 zstyle ':prompt:pure:git:branch' color 242
 zstyle ':prompt:pure:git:dirty' color 242
 zstyle ':prompt:pure:git:arrow' color "#99EBFC"
-```
 
-Finally, we need to change terminal background. Open Windows Teriminal settings, click on Open JSON file button. Add the following color scheme under schemes property. 
-
+# Additionally show git stash chunk in terminal 
+zstyle :prompt:pure:git:stash show yes
 ```
-schemes: [
-{
-      "name": "Pure",
-      "background": "#282A36",
-      "black": "#0C0C0C",
-      "blue": "#0037DA",
-      "brightBlack": "#767676",
-      "brightBlue": "#3B78FF",
-      "brightCyan": "#61D6D6",
-      "brightGreen": "#16C60C",
-      "brightPurple": "#B4009E",
-      "brightRed": "#E74856",
-      "brightWhite": "#F2F2F2",
-      "brightYellow": "#F9F1A5",
-      "cursorColor": "#FFFFFF",
-      "cyan": "#3A96DD",
-      "foreground": "#CCCCCC",
-      "green": "#13A10E",
-      "purple": "#881798",
-      "red": "#C50F1F",
-      "selectionBackground": "#FFFFFF",
-      "white": "#CCCCCC",
-      "yellow": "#C19C00"
-    }
-]
-```
-Now select Git Bash profile, and navigate through `Appearance -> Text -> Color Scheme` and select **Pure**.
-
 ---
 
 ## Contributing
